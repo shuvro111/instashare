@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Tailwind CSS -->
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@200;300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+
+<body style="font-family: 'IBM Plex Sans', sans-serif;">
+    <div class="app min-w-screen min-h-screen bg-grey-lighter py-8 px-4">
+
+        <div class="mail__wrapper max-w-md mx-auto">
+
+            <div class="mail__content bg-white p-8 shadow-md">
+
+                <a href="https://instashare.herokuapp.com"
+                    class="cursor-pointer content__header h-64 flex flex-col items-center justify-center text-center tracking-wide leading-normal bg-black -mx-8 -mt-8 bg-gray-900">
+                    <img src="https://i.ibb.co/1r81YGh/Logo.png" class="w-24 mb-4"></img>
+                    <p class="text-white text-4xl font-bold">Instashare</p>
+                </a>
+
+                <div class="content__body py-8 border-b">
+                    <p class="mb-16">
+                        Hey There!<br><br>
+                        <b class="text-green-500">${sender}</b> shared a file with you. Please click in the
+                        download link below to
+                        download the
+                        file.<br><br>
+                        Thanks for using our service!
+                    </p>
+
+                    <p class="text-sm">
+                        Keep Sharin'!<br>
+                        The Instashare App Team
+                    </p>
+                </div>
+                <div class="text-gray-600">
+                    <h1 class="text-3xl font-bold text-gray-900 mt-10 mb-5">Details</h1>
+                    <ul class="">
+                        <li class="flex items-center text-lg my-1">
+                            <p>
+                                Filename: <span class="ml-4">`${fileName}`</span>
+                            </p>
+                        </li>
+                        <li class="flex items-center text-lg my-1">
+
+                            Size: `${fileSize}`
+                        </li>
+                        <li class="flex items-center text-lg my-1">
+                            Upload Date: `${uploadDate}`
+                        </li>
+                        <li class="flex items-center text-lg my-1">
+                            Expiry Date: `${expiryDate}`
+                        </li>
+                    </ul>
+                    <div class="mt-10"><a href=`${downloadLink}`
+                            class="px-6 py-3 bg-green-500 text-white font-bold rounded">Download
+                            <span class="ml-1"><i class="fas fa-arrow-down"></i></span></a></div>
+
+                </div>
+
+                <div class="content__footer mt-8 text-center text-grey-darker">
+                    <h3 class="text-base sm:text-lg mb-4">Thanks for using The App!</h3>
+                    <a href="www.instashare.herokuapp.com" class="text-green-500">www.instashare.herokuapp.com</a>
+                </div>
+
+            </div>
+
+            <div class="mail__meta text-center text-sm text-grey-darker mt-8">
+
+                <div class="meta__social flex justify-center my-4">
+                    <a href="#"
+                        class="flex items-center justify-center mr-4 bg-gray-900 text-white rounded-full w-8 h-8 no-underline"><i
+                            class="fab fa-facebook-f"></i></a>
+                    <a href="#"
+                        class="flex items-center justify-center mr-4 bg-gray-900 text-white rounded-full w-8 h-8 no-underline"><i
+                            class="fab fa-instagram"></i></a>
+                    <a href="#"
+                        class="flex items-center justify-center bg-gray-900 text-white rounded-full w-8 h-8 no-underline"><i
+                            class="fab fa-twitter"></i></a>
+                </div>
+
+                <div class="meta__help">
+                    <p class="leading-loose">
+                        Questions or concerns? <a href="#" class="text-grey-darkest">help@instashare.herokuapp.com</a>
+                    </p>
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
