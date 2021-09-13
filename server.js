@@ -25,6 +25,6 @@ app.use('/api', addDocument)
 app.use('/api', sendEmail)
 app.use('/api', downloadFile)
 
-app.listen(3001, () => {
+app.listen(process.env.PORT || 3001, () => {
     console.log('lisening on port 3001');
 })
