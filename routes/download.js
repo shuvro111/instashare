@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const Document = require('../models/document');
+const path = require('path')
 
 
 router.get('/documents/download/:uuid', async (req, res) => {
@@ -9,9 +10,10 @@ router.get('/documents/download/:uuid', async (req, res) => {
     }
 
     const response = await file.save();
-    const filePath = `${(__dirname)}/../${file.path}`;
-    // return res.download(filePath);
-    return res.json(filePath)
+    const filePath =  path.resolve(__dirname, 'public', file.path); 
+    // `${(__dirname)}/../${file.path}`;
+    return res.download(filePath);
+    // return res.json(filePath)
 
 });
 
