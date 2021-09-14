@@ -11,7 +11,7 @@ router.get('/documents/download/:uuid', async (req, res) => {
 
     const filePath =  path.relative(__dirname, file.documentName); 
     // `${(__dirname)}/../${file.path}`;
-    // return res.download(filePath);
+    return res.download(filePath);
     return res.json(filePath)
 
 });
