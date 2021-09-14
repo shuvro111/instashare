@@ -12,8 +12,8 @@ router.get('/documents/download/:uuid', async (req, res) => {
     const response = await file.save();
     const filePath =  path.resolve(__dirname, 'public', file.documentName); 
     // `${(__dirname)}/../${file.path}`;
-    return res.download(filePath);
-    // return res.json(filePath)
+    // return res.download(filePath);
+    return res.json(filePath)
 
 });
 
