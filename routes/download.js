@@ -7,11 +7,13 @@ router.get('/documents/download/:uuid', async (req, res) => {
     if(!file){
         return res.json('Whoops! File has been removed or link expired')
     }
-    const filePath = `${(__dirname)}/../${file.path}`;
-    console.log(filePath);
-    const fileName = file.documentName;
-    console.log(fileName)
-    return res.download(filePath, fileName);
+    return res;
+
+    // const filePath = `${(__dirname)}/../${file.path}`;
+    // console.log(filePath);
+    // const fileName = file.documentName;
+    // console.log(fileName)
+    // return res.download(filePath, fileName);
 
 });
 
