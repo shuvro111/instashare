@@ -3,7 +3,7 @@ const  { googleapi } = require('googleapis');
 
 const clientId = process.env.GOOGLE_API_CLIENT_ID,
       clientSecret = process.env.GOOGLE_API_CLIENT_SECRET,
-      redirectUri = process.env.GOOGLE_API_REDIRECT_API,
+      redirectUri = process.env.GOOGLE_API_REDIRECT_URI,
       refreshToken = process.env.GOOGLE_API_REFRESH_TOKEN
       
 const oAuth2Client = new googleapi.auth.OAuth2(clientId, clientSecret, redirectUri);
