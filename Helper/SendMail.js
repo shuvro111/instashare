@@ -1,15 +1,31 @@
 const nodemailer = require('nodemailer');
+const  { googleapi } = require('googleapis');
+
+const clientId = process.env.GOOGLE_API_CLIENT_ID,
+      clientSecret = process.env.GOOGLE_API_CLIENT_SECRET,
+      redirectUri = process.env.GOOGLE_API_REDIRECT_API,
+      refreshToken = process.env.GOOGLE_API_REFRESH_TOKEN
+      
+const oAuth2Client = new googleapi.auth.OAuth2(clientId, clientSecret, redirectUri);
+oAuth2Client.setCredentials({refresh_token: refreshToken})
 
 const sendMail = async ({sender, receiver, subject, text, html}) => {
-    let transporter = nodemailer.createTransport({
+    const accessToken = await oAuth2Client.getAccessToken()
+
+    let transport = nodemailer.createTransport({
         service: 'gmail',
         auth: {
+            type: 'OAuth2',
             user: process.env.MAIL_USER,
             pass: process.env.MAIL_PASS,
+            clientId,
+            clientSecret,
+            refreshToken,
+            accessToken
         },
     });
 
-    let info = await transporter.sendMail({
+    let info = await transport.sendMail({
         from: `instashare <${sender}>`,
         to: receiver,
         subject,
