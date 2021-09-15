@@ -21,7 +21,7 @@ router.post("/documents/send", async (req, res) => {
         const fileSize = formatBytes(file.size)
         const uploadDate = new Date(file.createdAt).toDateString();
         const expiryDate = new Date(+new Date(file.createdAt) + 24 * 60 * 60 * 1000).toDateString();
-        const downloadLink = `${process.env.DOWNLOAD_API_URL}/${uuid}`
+        const downloadLink = `${process.env.APP_BASE_URL}/documentes/${uuid}`
         console.log(downloadLink);
 
 
