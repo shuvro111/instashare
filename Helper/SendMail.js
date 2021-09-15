@@ -1,10 +1,10 @@
 const nodemailer = require('nodemailer');
 const  { googleapi } = require('googleapis');
 
-const clientId = process.env.GOOGLE_API_CLIENT_ID,
-      clientSecret = process.env.GOOGLE_API_CLIENT_SECRET,
-      redirectUri = process.env.GOOGLE_API_REDIRECT_URI,
-      refreshToken = process.env.GOOGLE_API_REFRESH_TOKEN
+const clientId = process.env.GOOGLE_API_CLIENT_ID;
+const clientSecret = process.env.GOOGLE_API_CLIENT_SECRET;
+const redirectUri = process.env.GOOGLE_API_REDIRECT_URI;
+const refreshToken = process.env.GOOGLE_API_REFRESH_TOKEN;
       
 const oAuth2Client = new googleapi.auth.OAuth2(clientId, clientSecret, redirectUri);
 oAuth2Client.setCredentials({refresh_token: refreshToken})
